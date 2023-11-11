@@ -1,0 +1,108 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:padding="10dp"
+    android:layout_height="wrap_content">
+
+    <ImageView
+        android:id="@+id/cart_pic"
+        android:layout_width="100dp"
+        android:layout_height="100dp"
+        android:scaleType="centerCrop"
+        android:src="@drawable/coffe1"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <TextView
+        android:id="@+id/product_Name"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="20dp"
+        android:layout_marginTop="10dp"
+        android:fontFamily="@font/sora_medium"
+        android:text="Coffee"
+        android:textColor="@color/black"
+        android:textSize="16sp"
+        app:layout_constraintStart_toEndOf="@+id/cart_pic"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <TextView
+        android:id="@+id/cart_desc"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="10dp"
+        android:text="12sp"
+        android:fontFamily="@font/sora_medium"
+        app:layout_constraintStart_toStartOf="@+id/product_Name"
+        app:layout_constraintTop_toBottomOf="@+id/product_Name" />
+
+    <TextView
+        android:id="@+id/cart_price"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="15dp"
+        android:text="$15"
+        android:textColor="@color/black"
+        android:textSize="16sp"
+        app:layout_constraintStart_toStartOf="@+id/cart_desc"
+        app:layout_constraintTop_toBottomOf="@+id/cart_desc" />
+
+    <ImageView
+        android:id="@+id/remove_item"
+        android:layout_width="20dp"
+        android:layout_height="20dp"
+        android:layout_marginStart="140dp"
+        android:src="@drawable/remove"
+        app:layout_constraintBottom_toBottomOf="@+id/cart_price"
+        app:layout_constraintStart_toEndOf="@+id/cart_price"
+        app:layout_constraintTop_toTopOf="@+id/cart_price"
+        app:tint="@color/black" />
+
+    <TextView
+        android:id="@+id/Quanity"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="20dp"
+        android:text="1"
+        android:textColor="@color/black"
+        android:textSize="14sp"
+        app:layout_constraintBottom_toBottomOf="@+id/remove_item"
+        app:layout_constraintStart_toEndOf="@+id/remove_item"
+        app:layout_constraintTop_toTopOf="@+id/remove_item"
+        tools:ignore="MissingConstraints" />
+
+    <ImageView
+        android:id="@+id/add_item"
+        android:layout_width="20dp"
+        android:layout_height="20dp"
+        android:layout_marginStart="20dp"
+        android:src="@drawable/baseline_add_24"
+        app:layout_constraintBottom_toBottomOf="@+id/Quanity"
+        app:layout_constraintStart_toEndOf="@+id/Quanity"
+        app:layout_constraintTop_toTopOf="@+id/Quanity"
+        app:tint="@color/black"
+        tools:ignore="MissingConstraints" />
+
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="1dp"
+        android:layout_marginTop="10dp"
+       android:background="@color/black"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/cart_price" />
+
+    <ImageView
+        android:layout_width="20dp"
+        android:layout_height="20dp"
+        android:layout_marginStart="184dp"
+        android:src="@drawable/baseline_delete_24"
+        app:layout_constraintBottom_toBottomOf="@+id/product_Name"
+        app:layout_constraintStart_toEndOf="@+id/product_Name"
+        app:layout_constraintTop_toTopOf="@+id/product_Name"
+        app:layout_constraintVertical_bias="1.0"
+        tools:ignore="MissingConstraints" />
+
+
+</androidx.constraintlayout.widget.ConstraintLayout>
