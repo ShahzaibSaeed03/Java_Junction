@@ -45,7 +45,9 @@ public class Cart extends Fragment {
     // Method to update data in the Cart fragment
     public void updateCartData(Add_To_cart_model cartItem) {
         // Add the item to the list and notify the adapter
-        list.add(cartItem);
-        addToCartAdopter.notifyItemInserted(list.size() - 1);
+        if (list != null) { // Ensure that the list is not null
+            list.add(cartItem);
+            addToCartAdopter.notifyItemInserted(list.size() - 1);
+        }
     }
 }

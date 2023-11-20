@@ -2,6 +2,7 @@ package com.example.javajunction;
 
 import android.content.Intent;
 import android.os.Bundle;
+import android.util.Log;
 import android.view.View;
 import android.widget.Button;
 import android.widget.ImageView;
@@ -53,13 +54,23 @@ public class Details extends AppCompatActivity {
                 bundle.putString("itemDesc", itemDesc);
                 bundle.putInt("imageItem", imageItem);
 
-                // Get the Cart fragment instance
-                Cart cartFragment = (Cart) getSupportFragmentManager().findFragmentById(R.id.fragment_container);
+                Cart cartFragment = new Cart();
 
-                if (cartFragment != null) {
-                    // Update the data in the Cart fragment through the adapter
-                    cartFragment.updateCartData(new Add_To_cart_model(imageItem, itemName, itemDesc, "$15"));
+                Log.d("FragmentTransaction", "Before transaction");
+                getSupportFragmentManager().beginTransaction()
+                        .replace(R.id.fragment_container, cartFragment)
+                        .commit();
+                Log.d("FragmentTransaction", "After transaction");
+
+
+                View fragmentContainer = findViewById(R.id.fragment_container);
+                if (fragmentContainer == null) {
+                    Log.e("FragmentContainer", "Fragment container is null");
                 }
+
+                cartFragment.updateCartData(new Add_To_cart_model(imageItem, itemName, itemDesc, "$15"));
+
+
             }
         });
 

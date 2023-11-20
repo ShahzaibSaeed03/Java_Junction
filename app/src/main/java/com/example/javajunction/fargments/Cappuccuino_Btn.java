@@ -6,6 +6,7 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.Button;
+import android.widget.Toast;
 
 import androidx.fragment.app.Fragment;
 import androidx.recyclerview.widget.GridLayoutManager;
@@ -25,6 +26,7 @@ public class Cappuccuino_Btn extends Fragment {
     CoffeAdapter adapter;
 
     List<CoffeeModel>list;
+    List<CoffeeModel> filterlist;
 
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
@@ -34,6 +36,7 @@ public class Cappuccuino_Btn extends Fragment {
         recyclerView = view.findViewById(R.id.fargments);
 
         list = new ArrayList<>();
+
 
         GridLayoutManager layoutManager = new GridLayoutManager(requireContext(), 2, RecyclerView.VERTICAL, false);
 
@@ -88,11 +91,23 @@ public class Cappuccuino_Btn extends Fragment {
             @Override
             public void onClick(View v) {
 
+                filterlist=new ArrayList<>();
                 // Get the text from the button
                 String buttonText = filterButton.getText().toString();
+                filterlist.clear();
+
+                for (CoffeeModel item : list) {
+                    if (item.getTitle().contains(buttonText)) {
+                        filterlist.add(item);
+                    }
+                }
 
                 // Call the filter method
-                adapter.filterByTitle(buttonText);
+                adapter.filterByTitle(filterlist);
+                if (filterlist.isEmpty()){
+                    Toast.makeText(getContext(), "No data found", Toast.LENGTH_SHORT).show();
+                }
+                adapter.notifyDataSetChanged();
             }
         });
 

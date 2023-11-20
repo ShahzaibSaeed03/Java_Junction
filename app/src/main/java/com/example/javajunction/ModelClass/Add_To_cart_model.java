@@ -1,6 +1,8 @@
 package com.example.javajunction.ModelClass;
 
-public class Add_To_cart_model {
+import java.io.Serializable;
+
+public class Add_To_cart_model implements Serializable {
     int Image;
     String Title, Description, Price;
 
@@ -41,5 +43,15 @@ public class Add_To_cart_model {
 
     public void setPrice(String price) {
         Price = price;
+    }
+
+    @Override
+    public String toString() {
+        return "Add_To_cart_model{" +
+                "Image=" + Image +
+                ", Title='" + Title + '\'' +
+                ", Description='" + Description + '\'' +
+                ", Price='" + Price + '\'' +
+                '}';
     }
 }

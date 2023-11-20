@@ -13,17 +13,17 @@ import androidx.recyclerview.widget.RecyclerView;
 import com.example.javajunction.ModelClass.CoffeeModel;
 import com.example.javajunction.R;
 
+import java.util.ArrayList;
 import java.util.List;
 
 public class CoffeAdapter extends RecyclerView.Adapter<CoffeAdapter.ViewHolder> {
 
-    private List<CoffeeModel> originalList;
+
     private List<CoffeeModel> filteredList;
     private Context context;
     private OnItemClickListener onItemClickListener;
 
     public CoffeAdapter(List<CoffeeModel> list, Context context) {
-        this.originalList = list;
         this.filteredList = list; // Copy the original list to the filtered list initially
         this.context = context;
     }
@@ -69,19 +69,15 @@ public class CoffeAdapter extends RecyclerView.Adapter<CoffeAdapter.ViewHolder> 
         return filteredList.size();
     }
 
-    public void filterByTitle(String title) {
-        title = title.toLowerCase();
-
-        filteredList.clear();
-
-        for (CoffeeModel item : originalList) {
-            if (item.getTitle().toLowerCase().contains(title)) {
-                filteredList.add(item);
-            }
-        }
-
+    public void filterByTitle(List<CoffeeModel> filteredList) {
+        this.filteredList = filteredList;
         notifyDataSetChanged();
+
+
     }
+
+
+
 
     public class ViewHolder extends RecyclerView.ViewHolder {
         ImageView imageView;
