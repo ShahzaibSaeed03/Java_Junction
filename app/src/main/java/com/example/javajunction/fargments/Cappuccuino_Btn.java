@@ -2,6 +2,7 @@ package com.example.javajunction.fargments;
 
 import android.content.Intent;
 import android.os.Bundle;
+import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -12,8 +13,8 @@ import androidx.recyclerview.widget.GridLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
 import com.example.javajunction.AdopterClass.CoffeAdapter;
-import com.example.javajunction.ModelClass.CoffeeModel;
 import com.example.javajunction.Details;
+import com.example.javajunction.ModelClass.CoffeeModel;
 import com.example.javajunction.R;
 
 import java.util.ArrayList;
@@ -24,7 +25,7 @@ public class Cappuccuino_Btn extends Fragment {
     Button filterButton;
     CoffeAdapter adapter;
 
-    List<CoffeeModel>list;
+    List<CoffeeModel> list;
 
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
@@ -61,7 +62,7 @@ public class Cappuccuino_Btn extends Fragment {
         list.add(new CoffeeModel(R.drawable.capp_6, "Latti", "With Irish Cream", "$23" ));
 
         recyclerView.setLayoutManager(layoutManager);
-        adapter = new CoffeAdapter(list, getContext());
+        adapter = new CoffeAdapter(list,getContext());
         recyclerView.setAdapter(adapter);
         adapter.setOnItemClickListener(new CoffeAdapter.OnItemClickListener() {
             @Override
@@ -78,27 +79,30 @@ public class Cappuccuino_Btn extends Fragment {
                 intent.putExtra("imageItem",imageItem);
 
 
+//                if (MainActivity.list == null) {
+//                    MainActivity.list = new ArrayList<>();
+//                }
+
+//                MainActivity.list.add(new Add_To_cart_model(imageItem, itemName, itemDesc, itemPrice));
                 startActivity(intent);
             }
         });
 
-        filterButton.setText("Cappuccino"); // Set the button text to "Cappuccino"
+        //filterButton.setText("Cappuccino"); // Set the button text to "Cappuccino"
 
         filterButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-
+                list.clear();
                 // Get the text from the button
                 String buttonText = filterButton.getText().toString();
+
+                Log.d("Cappuccuino_Btn", "Button Clicked with text: " + buttonText);
 
                 // Call the filter method
                 adapter.filterByTitle(buttonText);
             }
         });
-
-
-
-
 
         return view;
     }

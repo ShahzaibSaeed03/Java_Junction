@@ -21,7 +21,7 @@ public class Splaish_Page extends AppCompatActivity {
                     e.printStackTrace();
                 }
                 finally {
-                    Intent intent = new Intent(Splaish_Page.this, MainActivity.class);
+                    Intent intent = new Intent(Splaish_Page.this, Login_java.class);
                     startActivity(intent);
                     finish();
                 }

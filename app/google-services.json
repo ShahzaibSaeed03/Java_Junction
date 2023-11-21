@@ -1,0 +1,29 @@
+{
+  "project_info": {
+    "project_number": "998335132207",
+    "project_id": "java-junction-12156",
+    "storage_bucket": "java-junction-12156.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:998335132207:android:5ec8bd15f3e9fe465c4cda",
+        "android_client_info": {
+          "package_name": "com.example.javajunction"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyCh3Gl9AcGnv3pu9ZEHucd4lCPDiBpguhU"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

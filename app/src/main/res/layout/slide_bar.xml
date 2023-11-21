@@ -1,0 +1,191 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:orientation="vertical"
+    android:layout_height="match_parent">
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:background="@color/colorPrimary"
+        android:layout_height="120dp">
+
+        <com.makeramen.roundedimageview.RoundedImageView
+            android:id="@+id/Profile_images"
+            android:layout_width="60dp"
+            android:layout_marginLeft="20dp"
+            android:layout_height="60dp"
+            android:layout_gravity="center"
+            android:scaleType="centerCrop"
+            android:src="@drawable/dp"
+            app:riv_corner_radius="100dp" />
+        <LinearLayout
+            android:layout_marginLeft="15dp"
+            android:layout_width="wrap_content"
+            android:layout_gravity="center"
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Shahzaib Saeed"
+                android:textColor="@color/white"
+                android:textSize="20dp"
+                android:fontFamily="@font/sora_medium"
+                android:textStyle="bold"
+                />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textColor="@color/white"
+                android:text="Java Junction"
+                android:textSize="15dp"
+               android:fontFamily="@font/sora_medium"
+                android:textStyle="bold"
+                android:layout_marginTop="0dp"/>
+
+
+        </LinearLayout>
+    </LinearLayout>
+    <LinearLayout
+        android:id="@+id/Home"
+        android:layout_marginTop="20dp"
+
+        android:layout_width="match_parent"
+        android:layout_height="60dp"
+       >
+        <ImageView
+            android:src="@drawable/home_button"
+            android:layout_width="25dp"
+            android:layout_height="25dp"
+            android:layout_gravity="center"
+            android:layout_marginLeft="20dp"
+          />
+        <TextView
+            android:id="@+id/premium"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Home"
+            android:fontFamily="@font/sora_medium"
+            android:layout_gravity="center"
+            android:textSize="16dp"
+            android:layout_marginLeft="35dp"/>
+
+
+    </LinearLayout>
+
+
+        <LinearLayout
+            android:id="@+id/Contect_us"
+            android:layout_marginTop="20dp"
+            android:layout_width="match_parent"
+            android:layout_height="60dp">
+
+            <ImageView
+                android:layout_width="25dp"
+                android:layout_height="25dp"
+                android:layout_gravity="center"
+                android:src="@drawable/contact_us"
+                android:layout_marginLeft="20dp"
+               />
+            <TextView
+                android:id="@+id/imports"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Contact Us"
+                android:layout_gravity="center"
+                android:fontFamily="@font/sora_medium"
+                android:textSize="16dp"
+                android:layout_marginLeft="35dp"/>
+
+
+        </LinearLayout>
+
+    <LinearLayout
+        android:id="@+id/Privecy_Policy"
+        android:layout_marginTop="20dp"
+        android:layout_width="match_parent"
+        android:layout_height="60dp">
+        <ImageView
+            android:layout_width="25dp"
+            android:layout_height="25dp"
+            android:layout_gravity="center"
+            android:src="@drawable/shield"
+            android:layout_marginLeft="20dp"
+
+            />
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Privacy Policy"
+            android:fontFamily="@font/sora_medium"
+            android:layout_gravity="center"
+
+
+            android:textSize="16dp"
+            android:layout_marginLeft="35dp"/>
+
+
+    </LinearLayout>
+
+
+
+    <LinearLayout
+        android:id="@+id/About_us"
+        android:layout_marginTop="20dp"
+
+        android:layout_width="match_parent"
+        android:layout_height="60dp">
+        <ImageView
+            android:layout_width="25dp"
+            android:layout_height="25dp"
+            android:layout_gravity="center"
+            android:src="@drawable/info"
+            android:layout_marginLeft="20dp"
+
+            />
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="About Us"
+            android:fontFamily="@font/sora_medium"
+            android:layout_gravity="center"
+
+
+            android:textSize="16dp"
+            android:layout_marginLeft="35dp"/>
+
+
+    </LinearLayout>
+
+    <LinearLayout
+        android:id="@+id/logout"
+        android:layout_marginTop="20dp"
+        android:layout_width="match_parent"
+        android:layout_height="60dp">
+        <ImageView
+            android:layout_width="25dp"
+            android:layout_height="25dp"
+            android:layout_gravity="center"
+            android:src="@drawable/logout"
+            android:layout_marginLeft="20dp"
+
+            />
+        <TextView
+            android:id="@+id/banksync"
+            android:fontFamily="@font/sora_medium"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Logout"
+            android:layout_gravity="center"
+
+
+            android:textSize="16dp"
+            android:layout_marginLeft="35dp"/>
+
+
+    </LinearLayout>
+
+
+</LinearLayout>

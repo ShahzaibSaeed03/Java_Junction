@@ -71,17 +71,23 @@ public class CoffeAdapter extends RecyclerView.Adapter<CoffeAdapter.ViewHolder> 
 
     public void filterByTitle(String title) {
         title = title.toLowerCase();
-
         filteredList.clear();
 
-        for (CoffeeModel item : originalList) {
-            if (item.getTitle().toLowerCase().contains(title)) {
-                filteredList.add(item);
+        if (title.isEmpty()) {
+            // If the filter text is empty, show the entire original list
+            filteredList.addAll(originalList);
+        } else {
+            // Filter the list based on the title
+            for (CoffeeModel item : originalList) {
+                if (item.getTitle().toLowerCase().contains(title)) {
+                    filteredList.add(item);
+                }
             }
         }
 
         notifyDataSetChanged();
     }
+
 
     public class ViewHolder extends RecyclerView.ViewHolder {
         ImageView imageView;
@@ -92,7 +98,7 @@ public class CoffeAdapter extends RecyclerView.Adapter<CoffeAdapter.ViewHolder> 
             imageView = itemView.findViewById(R.id.ImageCoffee);
             title = itemView.findViewById(R.id.title);
             desc = itemView.findViewById(R.id.desc);
-            price = itemView.findViewById(R.id.rice);
+            price = itemView.findViewById(R.id.price);
         }
     }
 }

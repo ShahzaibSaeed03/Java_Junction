@@ -15,6 +15,8 @@
     <FrameLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent"
+        android:id="@+id/detail_framelayout"
+        android:background="@color/white"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent">
@@ -50,6 +52,7 @@
                 app:layout_constraintTop_toTopOf="parent" />
 
             <ImageView
+                android:id="@+id/Like"
                 android:layout_width="30dp"
                 android:layout_height="30dp"
                 android:layout_marginStart="130dp"
@@ -106,6 +109,20 @@
                     android:textSize="14dp" />
 
             </LinearLayout>
+
+            <TextView
+                android:id="@+id/item_price"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="96dp"
+                android:fontFamily="@font/sora_medium"
+                android:text="$ 14.00"
+                android:textColor="@color/black"
+                android:textStyle="bold"
+                app:layout_constraintBottom_toBottomOf="@+id/linearLayout2"
+                app:layout_constraintStart_toEndOf="@+id/linearLayout2"
+                app:layout_constraintTop_toTopOf="@+id/linearLayout2"
+                app:layout_constraintVertical_bias="0.56" />
 
             <View
                 android:id="@+id/view"
@@ -189,6 +206,7 @@
                 android:layout_height="130dp"
                 android:layout_marginTop="50dp"
                 android:background="@drawable/buy_bg"
+
                 app:layout_constraintBottom_toBottomOf="parent"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintHorizontal_bias="0.0"
